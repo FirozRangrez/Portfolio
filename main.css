@@ -1,0 +1,391 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Courier New", Courier, monospace;
+}
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+.container {
+  position: relative;
+}
+.hamburger {
+  width: 50px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1;
+  cursor: pointer;
+}
+ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  list-style-type: none;
+}
+ul a {
+  font-size: 2rem;
+  line-height: 8rem;
+  background: rgb(238, 80, 41);
+  display: block;
+  width: 35vh;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  transition: 0.5s;
+}
+
+ul a:hover {
+  background: rgb(155, 53, 28);
+  box-shadow: 0px 3px 43px 0px rgba(255, 255, 255, 1);
+}
+
+ul a {
+  text-decoration: none;
+  /* color: rgb(0, 0, 0); */
+  color: white;
+}
+ul a:hover {
+  color: white;
+  text-decoration: none;
+}
+.Nav-links {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: rgba(67, 77, 219, 0.61);
+  /*clip-path: circle(70px at 100% -10%);*/
+  /* clip-path: circle(0% at 100% 0); */
+  clip-path: polygon(0 0, 100% 0, 57% 0, 41% 0);
+  z-index: 1;
+  transition: all 1s ease;
+}
+
+.Nav-links.open {
+  /* clip-path: circle(141% at 99% 3%); */
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  position: fixed;
+}
+
+.line:nth-child(1).open {
+  transform: rotate(-45deg) translate(-10px, 12px);
+}
+.line:nth-child(2).open {
+  opacity: 0;
+}
+.line:nth-child(3).open {
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+.hamburger.open {
+  position: fixed;
+  z-index: 99;
+}
+.Nav-links li.open {
+  animation: fade-right 2s linear;
+}
+
+.Nav-links h1 {
+  text-shadow: rgba(0, 0, 0, 0.4);
+  padding: 5px;
+  position: absolute;
+  background-color: white;
+}
+.Nav-links h1 span {
+  color: rgb(238, 80, 41);
+}
+.Nav-links:hover {
+  width: 100%;
+}
+.line {
+  height: 6px;
+  background-color: white;
+  margin: 5px;
+  transition: all 0.3s linear;
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.firstBox p {
+  font-family: Ink Free;
+  font-weight: 800;
+  background-color: rgba(255, 255, 255, 0.74);
+  color: black;
+  word-wrap: none;
+  position: absolute;
+  font-size: 2.3rem;
+  top: 25%;
+  padding: 2%;
+  margin: 5%;
+  transition-delay: 5s;
+  /* border:10px solid white; */
+  border-top-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
+
+.firstBox.close {
+  display: none;
+}
+
+.firstBoxBG {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("img1.jpg") center;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background-size: 220vh 100vh;
+  object-fit: cover;
+}
+.secondTab {
+  height: 100vh;
+  background-color: rgba(160, 160, 160, 0.788);
+}
+
+.box1 {
+  position: absolute;
+  background: white;
+  height: 60vh;
+  width: 50vw;
+  left: 25%;
+  top: 25vh;
+  border-radius: 10px;
+  /* box-shadow: -1px 96px 117px -98px rgba(0,0,0,1); */
+  box-shadow: -1px 80px 100px -90px rgba(0, 0, 0, 1);
+}
+.box1 p:first-child {
+  position: absolute;
+  left: 40vh;
+  top: 20vh;
+}
+.box1 p:nth-child(2) {
+  position: absolute;
+  left: 40vh;
+  top: 18vh;
+}
+.name {
+  position: absolute;
+  font-size: 3rem;
+  left: 40%;
+  top: 25vh;
+  z-index: 99;
+}
+
+.surname {
+  position: absolute;
+  font-size: 3rem;
+  left: 50%;
+  top: 30vh;
+  z-index: 99;
+}
+
+.box2 {
+  position: absolute;
+  background: url("icon.png") center no-repeat;
+  background-size: 50vh 60vh;
+  height: 60vh;
+  width: 20vw;
+  left: 20%;
+  top: 20vh;
+  box-shadow: -1px 28px 34px 0px rgb(161, 129, 129);
+  border-radius: 10px;
+  transition: 0.5s;
+}
+
+.box2:hover {
+  transform: scale(1.03);
+  box-shadow: -2px 0px 48px -4px rgb(161, 129, 129);
+}
+
+/* .row div{
+      padding-left: 40px;
+      padding-right: 40px;
+  } */
+
+.thirdTab {
+  background-color: #ddd;
+  height: 60vh;
+}
+
+.box {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skills {
+  height: 45vh;
+  width: 60vw;
+  background-color: white;
+  /* padding: 0px 15px 40px 15px; */
+  /* display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; */
+  box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 10px;
+  border-left: 10px inset;
+  border-color: rgb(141, 48, 172);
+}
+.experience {
+  display: initial;
+}
+.experience li ul {
+  display: initial;
+}
+
+.experience li ul li {
+  margin-left: 20px;
+}
+.fourthTab {
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("phishing.png") center no-repeat;
+  background-size: 80vw 100vh;
+  background-color: #3b93a9;
+}
+
+.Rsocial {
+  display: none;
+}
+ 
+.myBx{
+  display: none;
+} 
+.second{
+  display: none;
+}
+@media only screen and (max-width: 800px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .second{
+    display: initial;
+  }
+  .desktop{
+    display: none;
+  }
+  .quote p {
+    top: 25%;
+    font-size: 2rem;
+  }
+  .firstBox p {
+    font-size: 1.5rem;
+  }
+  .secondTab {
+    display: none;
+  }
+  .secondRes {
+    height: 110vh;
+    background-color: #ddd;
+  }
+  .ResMy {
+    display: initial;
+    height: 110vh;
+  }
+  .Rimg {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent),
+      url("icon.png") center;
+    box-shadow: 1px 1px 30px 0px rgba(0, 0, 0, 0.75);
+    border: 0px solid transparent;
+    border-radius: 20px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    position: relative;
+    z-index: 1;
+    height: 70vh;
+    margin: 20px;
+  }
+  .Rdetails {
+    width: 100%;
+    height: 10vh;
+    margin: auto 0;
+  }
+  .Rsocial {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 30%;
+  }
+  .Rsocial > div {
+    margin: 30%;
+  }
+  .Myintro p span:nth-child(2),.Myintro p span:nth-child(3){
+    line-height: 3;
+  }
+  .Myintro p span {
+    font-size: 1.5rem;
+  }
+  .Rsocial {
+    display: flex;
+  }
+  .glow {
+    color: #e0dfdc;
+    letter-spacing: 0.1em;
+    text-shadow: 0 -1px 0 #fff, 0 1px 0 #2e2e2e, 0 2px 0 #2c2c2c,
+      0 3px 0 #2a2a2a, 0 4px 0 #282828, 0 5px 0 #262626, 0 6px 0 #242424,
+      0 7px 0 #222, 0 8px 0 #202020, 0 9px 0 #1e1e1e, 0 10px 0 #1c1c1c,
+      0 11px 0 #1a1a1a, 0 12px 0 #181818, 0 13px 0 #161616, 0 14px 0 #141414,
+      0 15px 0 #121212, 0 22px 30px rgba(0, 0, 0, 0.9);
+  }
+  .Myintro p span:nth-child(3){
+    font-size: 1rem;
+  }
+  .myBx{
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px 0px 20px 5px;
+    display: block; 
+
+  }
+  .myBx span:first-child{
+    font-size: 1.5rem;
+  }
+
+  .skills{
+    width: 90vw;
+    height: 58vh;
+  }
+  .gridOne{
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    border-bottom: 2px solid;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    border-color:gray;
+  }
+  .experience li ul li{
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .fourthTab{
+    height: 50vh;
+  }
+  .Nav-links h1{
+    bottom: 0;
+    font-size: 2rem;
+    margin-bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+  ul a{
+    line-height: 3;
+  }
+  ul{
+    margin-top: 50px !important;
+  }
+}
